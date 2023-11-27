@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami                     = "ami-0cbd40f694b804622"
   instance_type           = "t2.micro"
-  key_name                = "docker"
+  key_name                = "template"
   vpc_security_group_ids  = [aws_security_group.sg.id]
   tags = {
     "Name" = "terraform"
@@ -10,7 +10,7 @@ resource "aws_instance" "web" {
 connection {
       type     = "ssh"
       user     = "ubuntu"
-      private_key = file("docker.pem")  # Update with the path to your private key
+      private_key = file("template.pem")  # Update with the path to your private key
       host     = aws_instance.web.public_ip
     }
 provisioner "remote-exec" {
