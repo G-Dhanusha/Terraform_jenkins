@@ -15,12 +15,12 @@ connection {
     }
 provisioner "remote-exec" {
     inline = [
-      "sudo apt-get update",
-      "sudo apt-get install nginx -y",
-      "sudo apt-get install unzip -y",
-      #"wget https://www.free-css.com/assets/files/free-css-templates/download/page284/pet-shop.zip",
-      #"sudo unzip pet-shop.zip",
-      #"sudo mv pet-shop-website-template /var/www/html/"
+      "sudo yum update",
+      "sudo yum install nginx -y",
+      "sudo yum install unzip -y",
+      "wget https://www.free-css.com/assets/files/free-css-templates/download/page284/pet-shop.zip",
+      "sudo unzip pet-shop.zip",
+      "sudo mv pet-shop-website-template /var/www/html/"
     ]
   }
 }
